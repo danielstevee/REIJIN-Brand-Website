@@ -838,6 +838,284 @@ letter-spacing:1px;
 }
 
 
+#contact-page {
+    background-color: #ebebeb;
+    padding: 60px 0 80px;
+    min-height: 100vh;
+}
+
+.contact-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.2;
+}
+
+/* Info Cards */
+.contact-info-cards {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 200px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-card i {
+    font-size: 28px;
+    color: #111;
+    flex-shrink: 0;
+}
+
+.info-card h6 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 4px;
+}
+
+.info-card p {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+/* Main layout */
+.contact-main {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* Left */
+.contact-left {
+    width: 340px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-map {
+    width: 100%;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.contact-social p {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 36px;
+    height: 36px;
+    background: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+.social-icons span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    margin-left: 4px;
+}
+
+/* Right - Form */
+.contact-right {
+    flex: 1;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 0;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 14px;
+    color: #111;
+    outline: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #bbb;
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: none;
+}
+
+.btn-contact {
+    width: 100%;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    background: #ff3131;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-contact:hover {
+    opacity: 0.88;
+}
+
+/* ================= FOOTER ================= */
+#footer {
+    background-color: #2b2b2b;
+    padding: 40px 0;
+}
+
+.footer-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-logo {
+    height: 32px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: #ffffff;
+}
+
+/* ================= CONTACT RESPONSIVE ================= */
+@media (max-width: 991.98px) {
+    .contact-main {
+        flex-direction: column;
+    }
+
+    .contact-left {
+        width: 100%;
+    }
+
+    .contact-map {
+        height: 260px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact-info-cards {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-title {
+        font-size: 26px;
+    }
+
+    .footer-wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+}
 
 
 
@@ -1268,164 +1546,208 @@ letter-spacing:1px;
         color: var(--pr-color);
     }
 
-/* ================= CONTACT PAGE ================= */
 
-#contact-page {
-    padding: 60px 0 80px;
 }
 
-.contact-container {
-    background: linear-gradient(60deg, #d6d6d6, #f2f2f2);
-    border-radius: 35px;
-    padding: 60px;
+/* ================= SPECIAL EDITION ================= */
+
+#special-edition {
+    padding: 40px 0 60px;
+    background-color: #f7f7f7;
+}
+
+.special-banner {
+    background-color: #ff3131;
+    border-radius: 24px;
+    position: relative;
     overflow: hidden;
+    height: 420px;
+    display: flex;
+    align-items: flex-end;
 }
 
-.contact-label {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #ff3131;
+/* Top Left Label */
+.special-topleft {
+    position: absolute;
+    top: 32px;
+    left: 36px;
+    z-index: 2;
 }
 
-.contact-text h1 {
-    font-size: 72px;
+.special-topleft p {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Top Right Title */
+.special-topright {
+    position: absolute;
+    top: 28px;
+    right: 36px;
+    z-index: 2;
+    text-align: right;
+}
+
+.special-topright h2 {
+    color: #ffffff;
+    font-size: 40px;
     font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* Big Name */
+.special-title {
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    z-index: 1;
+}
+
+.special-title h1 {
+    font-size: clamp(100px, 18vw, 200px);
+    font-weight: 800;
+    color: #ffffff;
     line-height: 1;
-    margin: 18px 0 20px;
-    color: #111;
+    margin: 0;
+    letter-spacing: -4px;
 }
 
-.contact-text p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #444;
-    max-width: 500px;
+/* Shoes */
+.special-shoes {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 65%;
+    max-width: 700px;
 }
 
-.contact-info {
-    margin-top: 35px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-}
-
-.info-item i {
-    width: 52px;
-    height: 52px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: #ff3131;
-    box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-.info-item span {
-    font-size: 15px;
-    font-weight: 600;
-    color: #222;
-}
-
-/* CARD */
-
-.contact-card {
-    background: white;
-    padding: 40px;
-    border-radius: 30px;
-    box-shadow: 0 20px 45px rgba(0,0,0,.08);
-}
-
-.contact-card h3 {
-    font-size: 34px;
-    font-weight: 800;
-    margin-bottom: 28px;
-    color: #111;
-}
-
-/* INPUT */
-
-.custom-input {
-    border: none;
-    border-radius: 18px;
-    padding: 18px 20px;
-    background: #f5f5f5;
-    font-size: 15px;
-    box-shadow: none !important;
-}
-
-.custom-input:focus {
-    background: #eeeeee;
-}
-
-.custom-textarea {
-    min-height: 140px;
-    resize: none;
-}
-
-/* BUTTON */
-
-.btn-contact {
+.special-shoes img {
     width: 100%;
-    height: 58px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Shop Now Button */
+.special-btn-wrap {
+    position: absolute;
+    bottom: 32px;
+    right: 36px;
+    z-index: 4;
+}
+
+.special-btn {
+    background-color: #ffffff;
+    color: #111111;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(90deg, #ff3131, #ff4d4d);
-    color: white;
-    font-size: 17px;
+    padding: 14px 32px;
+    font-size: 15px;
     font-weight: 700;
-    transition: .3s;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: opacity 0.2s;
 }
 
-.btn-contact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(255,49,49,.25);
+.special-btn:hover {
+    opacity: 0.85;
 }
 
-/* SUCCESS ALERT */
-
-.success-alert {
-    margin-top: 20px;
-    background: #37d56f;
-    color: white;
-    padding: 14px;
-    border-radius: 14px;
-    font-weight: 600;
-    text-align: center;
-    display: none;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 991px) {
-
-    .contact-container {
-        padding: 35px 25px;
+/* Responsive */
+@media (max-width: 767.98px) {
+    .special-banner {
+        height: 320px;
     }
 
-    .contact-text h1 {
-        font-size: 52px;
+    .special-title h1 {
+        font-size: clamp(72px, 22vw, 120px);
+        letter-spacing: -2px;
     }
 
-    .contact-card {
-        padding: 30px 24px;
-    }
-}
-
-@media (max-width: 575px) {
-
-    .contact-text h1 {
-        font-size: 42px;
-    }
-
-    .contact-card h3 {
+    .special-topright h2 {
         font-size: 28px;
     }
+
+    .special-shoes {
+        width: 80%;
+    }
+
+    .special-btn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
 }
+
+@media (max-width: 575.98px) {
+    .special-banner {
+        height: 260px;
+        border-radius: 16px;
+    }
+
+    .special-topleft {
+        top: 20px;
+        left: 20px;
+    }
+
+    .special-topright {
+        top: 20px;
+        right: 20px;
+    }
+
+    .special-topright h2 {
+        font-size: 22px;
+    }
+
+    .special-btn-wrap {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .special-shoes {
+        width: 90%;
+    }
 }
+
+.special-btn {
+    transition: all 0.2s ease-in;
+}
+
+.special-banner {
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+
+.special-banner:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(255, 49, 49, 0.25);
+}
+
+.special-banner:hover .special-btn {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.special-banner:hover .special-title h1 {
+    letter-spacing: 0px;
+    transition: all 0.2s ease-in;
+}
+
+.special-banner:hover .special-topright h2,
+.special-banner:hover .special-topleft p {
+    opacity: 0.85;
+    transition: all 0.2s ease-in;
+}
+
+.special-shoes img {
+    transition: all 0.2s ease-in;
+}
+
+.special-banner:hover .special-shoes img {
+    transform: translateY(-12px) scale(1.05);
+}
+
