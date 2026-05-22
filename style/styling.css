@@ -270,195 +270,436 @@ body {
 
 /* ================= NEW SHOP ================= */
 
-#new-shop {
-    padding-bottom: 50px;
+#new-shop{
+
+    padding-bottom:70px;
 }
 
-/* Card */
-.shop-card {
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-    min-height: 340px;
-    padding: 25px;
+/* CARD */
+
+.shop-card{
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    padding:28px 28px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:340px;
 }
 
-/* Background Variants */
-.dark-card {
-    background: linear-gradient(90deg, #232323, #3c3c3c);
+/* BACKGROUND */
+
+.dark-card{
+background:linear-gradient(90deg,#222,#353535);
 }
 
-.yellow-card {
-    background: #f4c52d;
+.yellow-card{
+background:#efc32d;
 }
 
-.red-card {
-    background: linear-gradient(90deg, #ff2e2e, #ff5757);
+.red-card{
+background:linear-gradient(90deg,#ff3131,#ff5757);
 }
 
-.gray-card {
-    background: #dddddd;
+.gray-card{
+background:#dddddd;
 }
 
-.green-card {
-    background: #37d56f;
+.green-card{
+background:#37d56f;
 }
 
-.blue-card {
-    background: #4098e3;
+.blue-card{
+background:#4098e3;
 }
 
-/* Large Sizes */
-.large-card {
-    min-height: 340px;
+/* CARD BESAR */
+
+.large-card,
+.bottom-large{
+
+height:340px;
 }
 
-.bottom-large {
-    min-height: 340px;
+/* CONTENT */
+
+.card-content{
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+position:relative;
 }
 
-/* Content */
-.card-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
+/* TOP */
+
+.top-text{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:flex-start;
 }
 
-/* Top Text */
-.top-text {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+.top-text p{
+
+font-size:14px;
+
+line-height:1.3;
+
+font-weight:500;
+
+margin:0;
+
+color:white;
 }
 
-.top-text p {
-    font-size: 14px;
-    line-height: 1.3;
-    color: white;
-    font-weight: 500;
+.top-text span{
+
+font-size:19px;
+
+font-weight:500;
+
+color:white;
 }
 
-.top-text span {
-    font-size: 22px;
-    color: white;
-    font-weight: 500;
-}
-
-/* Dark Text */
 .dark-text p,
-.dark-text span {
-    color: #222;
+.dark-text span{
+
+color:#222;
 }
 
-/* Title */
-.shop-card h2 {
-    font-size: 72px;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
-    margin-top: 5px;
+/* TITLE */
+
+.shop-card h2{
+
+font-size:46px;
+
+font-weight:700;
+
+line-height:1;
+
+margin-top:10px;
+
+margin-bottom:0;
+
+color:white;
 }
 
-/* Dark Title */
-.dark-title {
-    color: #222 !important;
+.dark-title{
+
+color:#222!important;
 }
 
-/* Image */
-.shop-card img {
-    position: absolute;
-    bottom: 65px;
-    left: 10px;
-    width: 100%;
-    max-width: 420px;
+/* IMAGE */
+
+.card-img-wrap{
+
+flex:1;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+margin:0 -10px;
 }
 
-/* Button */
-.btn-card {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
 
-    width: 200px;
-    height: 58px;
+/* CARD NORMAL (HITAM KUNING HIJAU BIRU) */
 
-    border: none;
-    border-radius: 50px;
+.dark-card img,
+.yellow-card img,
+.green-card img,
+.blue-card img{
 
-    background: linear-gradient(90deg, #ff3131, #ff4d4d);
+    width:90%;
 
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
+    max-width:380px;
 
-    transition: 0.3s;
+    max-height:none;
+
+    transform:scale(1.15);
+
+    position:relative;
+
+    bottom:50px;
+
 }
 
-.btn-card:hover {
-    transform: translateX(-50%) translateY(-3px);
+/* KHUSUS CARD MERAH + ABU BESARKAN */
+/* CARD MERAH + ABU BESAR */
+
+.large-card .card-img-wrap,
+.bottom-large .card-img-wrap{
+
+    overflow: visible;
+
+    align-items:flex-end;
+
 }
 
-/* ================= RESPONSIVE ================= */
+/* SEPATU BESAR */
 
-@media screen and (max-width: 991px) {
+.large-card img,
+.bottom-large img{
 
-    .shop-card {
-        min-height: 320px;
-    }
+    width:50%;
 
-    .shop-card h2 {
-        font-size: 52px;
-    }
+    max-width:900px;
 
-    .top-text span {
-        font-size: 18px;
-    }
+    max-height:none;
 
-    .shop-card img {
-        max-width: 340px;
-    }
+    transform:scale(1.55);
 
-    .btn-card {
-        width: 180px;
-        height: 54px;
-        font-size: 16px;
-    }
+    position:relative;
+
+    bottom:60px;
+
 }
 
-@media screen and (max-width: 576px) {
+/* BUTTON */
 
-    .shop-card {
-        min-height: 300px;
-        padding: 20px;
-    }
+.btn-wrap{
 
-    .shop-card h2 {
-        font-size: 46px;
-    }
+position:absolute;
 
-    .top-text p {
-        font-size: 12px;
-    }
+bottom:18px;
 
-    .shop-card img {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        margin-top: 10px;
-        max-width: 100%;
-    }
+left:50%;
 
-    .btn-card {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        transform: none;
-        margin-top: 20px;
-        width: 100%;
-    }
+transform:translateX(-50%);
 
-    .btn-card:hover {
-        transform: translateY(-3px);
-    }
+display:flex;
+
+justify-content:center;
+
+z-index:10;
+
+width:100%;
+
+
+}
+
+.btn-card{
+
+width:200px;
+
+height:54px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+90deg,
+#ff3131,
+#ff4d4d
+);
+
+font-size:18px;
+
+font-weight:700;
+
+color:white;
+
+cursor:pointer;
+
+transition:
+all .3s ease;
+
+box-shadow:
+0 8px 18px
+rgba(255,49,49,.18);
+
+
+}
+/* BUTTON HOVER */
+
+.btn-card:hover{
+
+transform:
+translateY(-4px)
+scale(1.04);
+
+background:
+linear-gradient(
+90deg,
+#ff2020,
+#ff6262
+);
+
+box-shadow:
+0 12px 28px
+rgba(255,49,49,.35);
+
+}
+
+/* BUTTON CLICK */
+
+.btn-card:active{
+
+transform:
+translateY(-1px)
+scale(.98);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:991px){
+
+.shop-card{
+
+height:320px;
+}
+
+.shop-card h2{
+
+font-size:48px;
+}
+
+.shop-card img{
+
+max-width:280px;
+}
+
+.large-card img,
+.bottom-large img{
+
+max-width:400px;
+}
+
+}
+
+@media(max-width:576px){
+
+.shop-card{
+
+height:300px;
+
+padding:22px;
+}
+
+.shop-card h2{
+
+font-size:42px;
+}
+
+.top-text p{
+
+font-size:12px;
+}
+
+.shop-card img{
+
+max-width:240px;
+}
+
+.btn-card{
+
+width:170px;
+
+height:48px;
+
+font-size:15px;
+}
+
+}
+/* ================= HOVER CARD ================= */
+
+.shop-card{
+
+transition:
+transform .35s ease,
+box-shadow .35s ease;
+
+cursor:pointer;
+
+}
+
+.shop-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 20px 45px
+rgba(0,0,0,.15);
+
+}
+
+/* IMAGE HOVER */
+
+.shop-card img{
+
+transition:
+transform .45s ease;
+
+}
+
+.dark-card:hover img,
+.yellow-card:hover img,
+.green-card:hover img,
+.blue-card:hover img{
+
+transform:
+scale(1.22);
+
+}
+
+.large-card:hover img,
+.bottom-large:hover img{
+
+transform:
+scale(1.62);
+
+}
+
+/* BUTTON HOVER */
+
+.btn-card{
+
+transition:
+all .3s ease;
+
+}
+
+.btn-card:hover{
+
+transform:
+translateY(-3px)
+scale(1.04);
+
+box-shadow:
+0 8px 20px
+rgba(255,49,49,.35);
+
+}
+
+/* TITLE HOVER */
+
+.shop-card h2{
+
+transition:.3s;
+
+}
+
+.shop-card:hover h2{
+
+letter-spacing:1px;
+
 }
