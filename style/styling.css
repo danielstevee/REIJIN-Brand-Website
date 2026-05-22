@@ -1,0 +1,270 @@
+:root {
+    --pr-color: #D6D6D6;
+}
+
+* {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar-custom {
+    padding: 10px 0;
+    background: #f5f5f5;
+    
+    /* Biar navbar ikut terus */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    backdrop-filter: blur(10px);
+}
+
+/* Logo */
+.logo-img {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation */
+.navbar-nav .nav-link {
+    color: #111 !important;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 6px;
+    transition: 0.3s;
+}
+
+/* Active Menu */
+.navbar-nav .nav-link.active {
+    font-weight: 700;
+    color: #000 !important;
+}
+
+/* Hover */
+.navbar-nav .nav-link:hover {
+    color: #ff2b2b !important;
+}
+
+/* Right Menu */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Login */
+.login-btn {
+    text-decoration: none;
+    color: #111 !important;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.login-btn:hover {
+    color: #111 !important;
+}
+
+/* Icons */
+.icon-nav {
+    font-size: 20px;
+    color: #111;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.icon-nav:hover {
+    color: #ff2b2b;
+}
+
+/* Toggle */
+.navbar-toggler i {
+    font-size: 24px;
+    color: #111;
+}
+
+/* ================= HERO ================= */
+
+#hero {
+
+    /* Hero dinaikin */
+    margin-top: -8px;
+
+    padding-bottom: 30px;
+}
+
+.hero-container {
+    position: relative;
+
+    /* Gradient Background */
+    background: linear-gradient(60deg, var(--pr-color), #F2F2F2);
+
+    border-radius: 30px;
+    min-height: 545px;
+    overflow: hidden;
+
+    /* lebih pas */
+    padding: 45px 50px;
+}
+
+/* Left Text */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 400px;
+
+    /* disesuaikan */
+    margin-top: 85px;
+}
+
+.hero-subtitle {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 82px;
+    font-weight: 800;
+    color: #000;
+    line-height: 0.95;
+    margin-bottom: 24px;
+}
+
+/* Button */
+.btn-shop {
+    width: 200px;
+    height: 58px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff3131, #ff4d4d);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-shop:hover {
+    transform: translateY(-3px);
+}
+
+/* Right Description */
+.hero-description {
+    position: absolute;
+
+    /* disesuaikan */
+    top: 55px;
+    right: 55px;
+
+    max-width: 320px;
+    z-index: 2;
+}
+
+.hero-description p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: right;
+    color: #222;
+}
+
+/* Shoes Image */
+.hero-shoes {
+    position: absolute;
+
+    /* lebih balance */
+    bottom: 35px;
+    right: 0;
+
+    width: 68%;
+    z-index: 1;
+}
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 991px) {
+
+    .navbar-collapse {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 16px;
+        margin-top: 15px;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 10px 0;
+    }
+
+    .nav-right {
+        margin-top: 15px;
+        justify-content: start;
+    }
+
+    .logo-img {
+        width: 120px;
+    }
+
+    /* HERO */
+
+    #hero {
+        margin-top: 0;
+    }
+
+    .hero-container {
+        padding: 40px 25px;
+        min-height: auto;
+    }
+
+    .hero-text {
+        margin-top: 0;
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 60px;
+    }
+
+    .btn-shop {
+        width: 180px;
+        height: 55px;
+        font-size: 17px;
+    }
+
+    .hero-description {
+        position: static;
+        max-width: 100%;
+        margin-top: 30px;
+    }
+
+    .hero-description p {
+        text-align: left;
+        font-size: 15px;
+    }
+
+    .hero-shoes {
+        position: static;
+        width: 100%;
+        margin-top: 40px;
+    }
+}
+
