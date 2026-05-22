@@ -268,3 +268,197 @@ body {
     }
 }
 
+/* ================= NEW SHOP ================= */
+
+#new-shop {
+    padding-bottom: 50px;
+}
+
+/* Card */
+.shop-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    min-height: 340px;
+    padding: 25px;
+}
+
+/* Background Variants */
+.dark-card {
+    background: linear-gradient(90deg, #232323, #3c3c3c);
+}
+
+.yellow-card {
+    background: #f4c52d;
+}
+
+.red-card {
+    background: linear-gradient(90deg, #ff2e2e, #ff5757);
+}
+
+.gray-card {
+    background: #dddddd;
+}
+
+.green-card {
+    background: #37d56f;
+}
+
+.blue-card {
+    background: #4098e3;
+}
+
+/* Large Sizes */
+.large-card {
+    min-height: 340px;
+}
+
+.bottom-large {
+    min-height: 340px;
+}
+
+/* Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+}
+
+/* Top Text */
+.top-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.top-text p {
+    font-size: 14px;
+    line-height: 1.3;
+    color: white;
+    font-weight: 500;
+}
+
+.top-text span {
+    font-size: 22px;
+    color: white;
+    font-weight: 500;
+}
+
+/* Dark Text */
+.dark-text p,
+.dark-text span {
+    color: #222;
+}
+
+/* Title */
+.shop-card h2 {
+    font-size: 72px;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-top: 5px;
+}
+
+/* Dark Title */
+.dark-title {
+    color: #222 !important;
+}
+
+/* Image */
+.shop-card img {
+    position: absolute;
+    bottom: 65px;
+    left: 10px;
+    width: 100%;
+    max-width: 420px;
+}
+
+/* Button */
+.btn-card {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 200px;
+    height: 58px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(90deg, #ff3131, #ff4d4d);
+
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-card:hover {
+    transform: translateX(-50%) translateY(-3px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 991px) {
+
+    .shop-card {
+        min-height: 320px;
+    }
+
+    .shop-card h2 {
+        font-size: 52px;
+    }
+
+    .top-text span {
+        font-size: 18px;
+    }
+
+    .shop-card img {
+        max-width: 340px;
+    }
+
+    .btn-card {
+        width: 180px;
+        height: 54px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .shop-card {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .shop-card h2 {
+        font-size: 46px;
+    }
+
+    .top-text p {
+        font-size: 12px;
+    }
+
+    .shop-card img {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 10px;
+        max-width: 100%;
+    }
+
+    .btn-card {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        transform: none;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .btn-card:hover {
+        transform: translateY(-3px);
+    }
+}
