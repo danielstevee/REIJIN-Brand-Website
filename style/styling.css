@@ -559,67 +559,130 @@ scale(.98);
 
 }
 
-/* RESPONSIVE */
+/* ================= TABLET ================= */
 
 @media(max-width:991px){
+
+/* HERO */
+
+.hero-container{
+
+padding:40px 25px;
+
+min-height:auto;
+
+}
+
+.hero-text{
+
+margin-top:0;
+
+max-width:100%;
+
+}
+
+.hero-text h1{
+
+font-size:60px;
+
+}
+
+.hero-description{
+
+position:static;
+
+margin-top:20px;
+
+max-width:100%;
+
+}
+
+.hero-description p{
+
+text-align:left;
+
+}
+
+.hero-shoes{
+
+position:static;
+
+width:100%;
+
+margin-top:35px;
+
+}
+
+/* CARD */
 
 .shop-card{
 
 height:320px;
+
+padding:24px;
+
 }
 
 .shop-card h2{
 
-font-size:48px;
-}
+font-size:40px;
 
-.shop-card img{
-
-max-width:280px;
-}
-
-.large-card img,
-.bottom-large img{
-
-max-width:400px;
-}
-
-}
-
-@media(max-width:576px){
-
-.shop-card{
-
-height:300px;
-
-padding:22px;
-}
-
-.shop-card h2{
-
-font-size:42px;
 }
 
 .top-text p{
 
 font-size:12px;
+
 }
 
-.shop-card img{
+.top-text span{
 
-max-width:240px;
+font-size:17px;
+
+}
+
+/* CARD NORMAL */
+
+.dark-card img,
+.yellow-card img,
+.green-card img,
+.blue-card img{
+
+max-width:270px;
+
+bottom:20px;
+
+transform:scale(1.05);
+
+}
+
+/* CARD BESAR */
+
+.large-card img,
+.bottom-large img{
+
+width:70%;
+
+max-width:420px;
+
+bottom:35px;
+
+transform:scale(1.25);
+
 }
 
 .btn-card{
 
-width:170px;
+width:180px;
 
-height:48px;
+height:50px;
 
-font-size:15px;
+font-size:16px;
+
 }
 
 }
+
 /* ================= HOVER CARD ================= */
 
 .shop-card{
@@ -702,4 +765,436 @@ transition:.3s;
 
 letter-spacing:1px;
 
+}
+
+/* ============================================================
+   REIJIN — Responsive Mobile Styles
+   Tambahkan di bawah bagian existing CSS (styling.css)
+   ============================================================ */
+
+
+/* ─── Navbar ─────────────────────────────────────────────── */
+
+@media (max-width: 991.98px) {
+
+    .navbar-custom {
+        background-color: #1a1a1a !important;
+        padding: 14px 0;
+    }
+
+    /* Hamburger icon */
+    .navbar-toggler {
+        color: #ffffff !important;
+    }
+
+    .navbar-toggler .bi-list {
+        font-size: 28px;
+        color: #ffffff;
+    }
+
+    /* Dropdown menu */
+    .navbar-collapse {
+        background-color: #1a1a1a;
+        padding: 16px 20px 20px;
+        margin-top: 10px;
+        border-radius: 0 0 12px 12px;
+    }
+
+    .nav-link,
+    .navbar-scrolled .nav-link {
+        color: #ffffff !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 15px !important;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    /* Right nav (login, icons) */
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 16px;
+        margin-top: 4px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .login-btn {
+        font-size: 14px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+    }
+
+    .icon-nav {
+        font-size: 20px;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    /* Scrolled state */
+    .navbar-scrolled {
+        background-color: #ffffff !important;
+    }
+
+    .navbar-scrolled .navbar-collapse {
+        background-color: #ffffff;
+    }
+
+    .navbar-scrolled .nav-link {
+        color: var(--pr-color) !important;
+        border-bottom-color: rgba(0, 0, 0, 0.07);
+    }
+
+    .navbar-scrolled .login-btn,
+    .navbar-scrolled .icon-nav {
+        color: var(--pr-color) !important;
+    }
+
+    .navbar-scrolled .navbar-toggler .bi-list {
+        color: var(--pr-color);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ─── Hero Section ───────────────────────────────────────── */
+
+@media (max-width: 991.98px) {
+    .navbar-collapse .nav-link.active {
+        color: #ffffff !important;
+    }
+}
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: #1a1a1a;
+    }
+
+    .navbar-collapse .nav-link,
+    .navbar-collapse .login-btn,
+    .navbar-collapse .icon-nav {
+        color: #ffffff !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+
+    #hero {
+        height: auto;
+        min-height: 100svh;
+        padding: 20px 0 60px;
+    }
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        overflow: hidden;
+        gap: 0;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(56px, 15vw, 90px);
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        margin-bottom: 12px;
+    }
+
+    .btn-shop {
+        margin-top: 20px;
+        margin-bottom: 28px;
+    }
+
+    .hero-description {
+        max-width: 80%;
+        font-size: 13px;
+        line-height: 1.7;
+        opacity: 0.8;
+        margin-bottom: 24px;
+    }
+
+    /* Sepatu tetap mencolok, melayang di sisi kanan */
+    .hero-shoes {
+        width: 100%;
+        max-width: 360px;
+        align-self: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #hero {
+        padding: 100px 0 50px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(48px, 18vw, 72px);
+    }
+
+    .hero-description {
+        max-width: 100%;
+    }
+
+    .hero-shoes {
+        max-width: 300px;
+    }
+}
+
+
+/* ─── New Shop Section — Cards ───────────────────────────── */
+
+@media (max-width: 991.98px) {
+
+    #new-shop {
+        padding-bottom: 40px;
+    }
+
+    /* Pastikan large card (merah & abu) tampil penuh di tablet */
+    .large-card,
+    .bottom-large {
+        min-height: 340px;
+    }
+
+    .shop-card h2 {
+        font-size: clamp(28px, 6vw, 48px);
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    /* Setiap card stack vertikal */
+    #new-shop .row > [class*="col-"] {
+        width: 100% !important;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .shop-card {
+        min-height: 300px;
+    }
+
+    .large-card,
+    .bottom-large {
+        min-height: 320px;
+    }
+
+    .card-img-wrap img {
+        max-width: 220px;
+    }
+
+    .shop-card h2 {
+        font-size: 36px;
+    }
+
+    .top-text p {
+        font-size: 11px;
+    }
+
+    .btn-card {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    #new-shop .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .shop-card {
+        min-height: 280px;
+    }
+
+    .card-img-wrap img {
+        max-width: 190px;
+    }
+
+    .shop-card h2 {
+        font-size: 30px;
+    }
+}
+
+
+/* ─── Layanan Section ────────────────────────────────────── */
+
+@media (max-width: 767.98px) {
+
+    #layanan {
+        padding: 60px 0;
+    }
+
+    h2 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .sub-title {
+        font-size: 15px;
+    }
+
+    .card-layanan {
+        height: auto;
+        min-height: 260px;
+        padding: 28px;
+    }
+
+    .card-layanan:hover {
+        height: auto;
+        min-height: 260px;
+    }
+
+    .circle-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .circle-icon i {
+        font-size: 24px;
+    }
+
+    .card-layanan h3 {
+        font-size: 20px;
+    }
+}
+
+
+/* ─── Search Section ─────────────────────────────────────── */
+
+@media (max-width: 767.98px) {
+
+    #search {
+        height: auto;
+        min-height: 100svh;
+        padding: 80px 0;
+    }
+
+    #search h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    #search p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .input-cari {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .input-cari .button-secondary,
+    .input-cari .button-primary {
+        width: 100%;
+        height: 56px;
+        font-size: 16px;
+        border-radius: 0;
+    }
+
+    .input-cari .button-secondary {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .input-cari .button-primary {
+        border-radius: 10px 10px 0 0;
+        font-size: 28px;
+    }
+}
+
+
+/* ─── General Utility ────────────────────────────────────── */
+
+@media (max-width: 575.98px) {
+
+    /* Tighten container padding on very small screens */
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    /* Suppress stacking z-index interference on mobile */
+    * {
+        z-index: auto;
+    }
+
+    .navbar {
+        z-index: 1030;
+    }
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+
+    .btn-shop,
+    .btn-card,
+    .button-primary,
+    .button-secondary,
+    .button-lg-primary {
+        min-height: 48px;
+    }
+
+    .icon-nav {
+        padding: 8px;
+    }
+
+    /* Disable hover card effect on touch devices */
+    .card-layanan:hover {
+        background: #FFFFFF;
+    }
+
+    .card-layanan:hover .circle-icon {
+        background-color: var(--pr-color);
+    }
+
+    .card-layanan:hover .circle-icon i {
+        color: #FFFFFF;
+    }
+
+    .card-layanan:hover h3,
+    .card-layanan:hover p {
+        color: var(--pr-color);
+    }
 }
