@@ -152,6 +152,52 @@
     </div>
 </div>
 
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+
+    <!-- Close -->
+    <div class="search-close" id="closeSearch">
+        <i class="bi bi-x-lg"></i>
+    </div>
+
+    <div class="search-box-wrap">
+
+        <h2>Search Products</h2>
+
+        <div class="search-input-wrap">
+            <i class="bi bi-search"></i>
+
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search your shoes..."
+            >
+        </div>
+
+        <!-- Results -->
+        <div class="search-results" id="searchResults">
+
+            <a href="#" class="search-item">
+                Raijin Black
+            </a>
+
+            <a href="#" class="search-item">
+                Raijin Red
+            </a>
+
+            <a href="#" class="search-item">
+                Raijin Green
+            </a>
+
+            <a href="#" class="search-item">
+                Raijin Blue
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
     <!-- Hero Section -->
     <section id="hero">
 
@@ -982,14 +1028,13 @@
 
         <div class="footer-left">
             <img src="asset/logoreijin.png" alt="REIJIN" class="footer-logo">
-            <p class="footer-copy">Copyright by REIJIN Footwear. All Right Reserved</p>
         </div>
-
+        <div <p class="footer-copy mt-4">Copyright by REIJIN Footwear. All Right Reserved</p> </div>
         <nav class="footer-nav">
-            <a href="index.html">Beranda</a>
-            <a href="#">Layanan</a>
-            <a href="#">Fitur</a>
-            <a href="contact.html">Kontak</a>
+            <a href="index.html">Home</a>
+            <a href="#new-shop">New Collection</a>
+            <a href="#best-seller">Best Seller</a>
+            <a href="#contact-page">Contact</a>
         </nav>
 
     </div>
@@ -1092,6 +1137,74 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+</script>
+
+<script>
+
+const searchOverlay = document.getElementById("searchOverlay");
+const closeSearch = document.getElementById("closeSearch");
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+
+/* ICON SEARCH NAVBAR */
+document.querySelector(".bi-search").addEventListener("click", () => {
+
+    searchOverlay.classList.add("active");
+
+    setTimeout(() => {
+        searchInput.focus();
+    }, 200);
+
+});
+
+/* CLOSE */
+closeSearch.addEventListener("click", () => {
+    searchOverlay.classList.remove("active");
+});
+
+/* ESC CLOSE */
+window.addEventListener("keydown", (e) => {
+
+    if(e.key === "Escape"){
+        searchOverlay.classList.remove("active");
+    }
+
+});
+
+/* SEARCH FILTER */
+searchInput.addEventListener("keyup", () => {
+
+    const filter = searchInput.value.toLowerCase();
+
+    const items = document.querySelectorAll(".search-item");
+
+    let found = false;
+
+    items.forEach(item => {
+
+        const text = item.textContent.toLowerCase();
+
+        if(text.includes(filter)){
+
+            item.style.display = "block";
+            found = true;
+
+        } else {
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+    if(filter.length > 0){
+        searchResults.classList.add("active");
+    } else {
+        searchResults.classList.remove("active");
+    }
+
+});
+
 </script>
     
 </body>
