@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/styling.css">
+
+    <title>REIJIN | Contact</title>
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="asset/logoreijin.png" alt="REIJIN Logo" class="logo-img">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">New Collection</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Special Edition</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right -->
+                <div class="nav-right">
+
+                    <a href="#" class="login-btn">Login</a>
+
+                    <i class="bi bi-search icon-nav"></i>
+
+                    <i class="bi bi-cart3 icon-nav"></i>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section id="contact-page">
+
+        <div class="container contact-container">
+
+            <div class="row align-items-center g-5">
+
+                <!-- LEFT -->
+                <div class="col-lg-6">
+
+                    <div class="contact-text">
+
+                        <span class="contact-label">
+                            REIJIN FOOTWEAR
+                        </span>
+
+                        <h1>
+                            Let’s Talk <br>
+                            With Us
+                        </h1>
+
+                        <p>
+                            Have questions about our collections,
+                            orders, or collaborations? Reach out
+                            and our team will help you anytime.
+                        </p>
+
+                        <div class="contact-info">
+
+                            <div class="info-item">
+                                <i class="bi bi-geo-alt"></i>
+                                <span>Surabaya, Indonesia</span>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-envelope"></i>
+                                <span>support@reijin.com</span>
+                            </div>
+
+                            <div class="info-item">
+                                <i class="bi bi-telephone"></i>
+                                <span>+62 812 3456 7890</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-lg-6">
+
+                    <div class="contact-card">
+
+                        <h3>Send Message</h3>
+
+                        <!-- FORM -->
+                        <form id="contactForm"
+                            action="https://api.web3forms.com/submit"
+                            method="POST">
+
+                            <!-- ACCESS KEY -->
+                            <input type="hidden"
+                                name="access_key"
+                                value="5005e534-4650-4d4f-a90e-192550366ea5">
+
+                            <!-- SUBJECT EMAIL -->
+                            <input type="hidden"
+                                name="subject"
+                                value="New Message From REIJIN Contact Form">
+
+                            <!-- Redirect -->
+                            <input type="hidden"
+                                name="redirect"
+                                value="http://127.0.0.1:5500/contact.html">
+
+                            <!-- Name -->
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control custom-input"
+                                    placeholder="Your Name"
+                                    required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control custom-input"
+                                    placeholder="Your Email"
+                                    required>
+                            </div>
+
+                            <!-- Subject -->
+                            <div class="mb-3">
+                                <input
+                                    type="text"
+                                    name="topic"
+                                    class="form-control custom-input"
+                                    placeholder="Subject"
+                                    required>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="mb-4">
+                                <textarea
+                                    name="message"
+                                    class="form-control custom-input custom-textarea"
+                                    placeholder="Write your message"
+                                    required></textarea>
+                            </div>
+
+                            <!-- Button -->
+                            <button type="submit" class="btn-contact">
+                                <i class="bi bi-send-fill"></i>
+                                Send Message
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER BADGE ================= -->
+
+    <section id="layanan-badge">
+        <div class="container">
+            <div class="layanan-badge-wrap">
+
+                <div class="badge-item">
+                    <i class="bi bi-truck"></i>
+                    <div class="badge-text">
+                        <h6>Free Shipping</h6>
+                        <p>Free Shipping On All Order</p>
+                    </div>
+                </div>
+
+                <div class="badge-item">
+                    <i class="bi bi-patch-check"></i>
+                    <div class="badge-text">
+                        <h6>Money Guarantee</h6>
+                        <p>30 Day Money Back</p>
+                    </div>
+                </div>
+
+                <div class="badge-item">
+                    <i class="bi bi-headset"></i>
+                    <div class="badge-text">
+                        <h6>Online Support 24/7</h6>
+                        <p>Technical Support 24/7</p>
+                    </div>
+                </div>
+
+                <div class="badge-item">
+                    <i class="bi bi-credit-card"></i>
+                    <div class="badge-text">
+                        <h6>Secure Payment</h6>
+                        <p>All Cards Accepted</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ALERT SCRIPT -->
+    <script>
+        const form = document.getElementById("contactForm");
+        const successMessage = document.getElementById("successMessage");
+
+        form.addEventListener("submit", () => {
+
+            successMessage.style.display = "block";
+
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 4000);
+
+        });
+    </script>
+
+</body>
+
+</html>

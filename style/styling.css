@@ -777,7 +777,7 @@ letter-spacing:1px;
 
 #layanan-badge {
     background-color: #ffffff;
-    padding: 40px 0;
+    padding: 20px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
@@ -1267,4 +1267,165 @@ letter-spacing:1px;
     .card-layanan:hover p {
         color: var(--pr-color);
     }
+
+/* ================= CONTACT PAGE ================= */
+
+#contact-page {
+    padding: 60px 0 80px;
+}
+
+.contact-container {
+    background: linear-gradient(60deg, #d6d6d6, #f2f2f2);
+    border-radius: 35px;
+    padding: 60px;
+    overflow: hidden;
+}
+
+.contact-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ff3131;
+}
+
+.contact-text h1 {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 18px 0 20px;
+    color: #111;
+}
+
+.contact-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 500px;
+}
+
+.contact-info {
+    margin-top: 35px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.info-item i {
+    width: 52px;
+    height: 52px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #ff3131;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.info-item span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* CARD */
+
+.contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.08);
+}
+
+.contact-card h3 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 28px;
+    color: #111;
+}
+
+/* INPUT */
+
+.custom-input {
+    border: none;
+    border-radius: 18px;
+    padding: 18px 20px;
+    background: #f5f5f5;
+    font-size: 15px;
+    box-shadow: none !important;
+}
+
+.custom-input:focus {
+    background: #eeeeee;
+}
+
+.custom-textarea {
+    min-height: 140px;
+    resize: none;
+}
+
+/* BUTTON */
+
+.btn-contact {
+    width: 100%;
+    height: 58px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #ff3131, #ff4d4d);
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255,49,49,.25);
+}
+
+/* SUCCESS ALERT */
+
+.success-alert {
+    margin-top: 20px;
+    background: #37d56f;
+    color: white;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+
+    .contact-container {
+        padding: 35px 25px;
+    }
+
+    .contact-text h1 {
+        font-size: 52px;
+    }
+
+    .contact-card {
+        padding: 30px 24px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .contact-text h1 {
+        font-size: 42px;
+    }
+
+    .contact-card h3 {
+        font-size: 28px;
+    }
+}
 }
