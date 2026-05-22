@@ -49,22 +49,21 @@
 
                 <!-- Center Nav -->
                 <ul class="navbar-nav mx-auto">
+<li class="nav-item">
+    <a class="nav-link active" href="#hero">Home</a>
+</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
+<li class="nav-item">
+    <a class="nav-link" href="#new-shop">New Collection</a>
+</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">New Collection</a>
-                    </li>
+<li class="nav-item">
+    <a class="nav-link" href="#best-seller">Best Seller</a>
+</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Special Edition</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactForm">Contact</a>
-                    </li>
+<li class="nav-item">
+    <a class="nav-link" href="#contact-page">Contact</a>
+</li>
 
                 </ul>
 
@@ -1059,6 +1058,40 @@
         if (diff > 50 && currentPage < totalPages - 1) goToPage(currentPage + 1);
         if (diff < -50 && currentPage > 0) goToPage(currentPage - 1);
     });
+</script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+window.addEventListener("scroll", () => {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        const href = link.getAttribute("href").replace("#", "");
+
+        if (href === currentSection) {
+            link.classList.add("active");
+        }
+    });
+});
 </script>
     
 </body>
