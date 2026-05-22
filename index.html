@@ -71,7 +71,7 @@
                 <!-- Right -->
                 <div class="nav-right">
 
-                    <a href="#" class="login-btn">Login</a>
+<a href="#" class="login-btn" data-bs-toggle="modal" data-bs-target="#authModal">Login</a>
 
                     <i class="bi bi-search icon-nav"></i>
 
@@ -82,6 +82,76 @@
             </div>
         </div>
     </nav>
+
+    <!-- ================= MODAL LOGIN / REGISTER ================= -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content auth-modal">
+
+            <!-- Close -->
+            <button type="button" class="auth-close" data-bs-dismiss="modal">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <!-- Brand -->
+            <div class="auth-brand">
+                <img src="asset/logoreijin.png" alt="REIJIN Logo" class="auth-logo">
+            </div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Login</button>
+                <button class="auth-tab" id="tabRegister" onclick="switchTab('register')">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form" id="formLogin">
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="auth-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <div class="auth-forgot">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button class="auth-btn">Login</button>
+                <p class="auth-switch">
+                    Don't have an account?
+                    <span onclick="switchTab('register')">Register</span>
+                </p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-form d-none" id="formRegister">
+                <div class="auth-field">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="auth-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a password">
+                </div>
+                <div class="auth-field">
+                    <label>Confirm Password</label>
+                    <input type="password" placeholder="Repeat your password">
+                </div>
+                <button class="auth-btn">Create Account</button>
+                <p class="auth-switch">
+                    Already have an account?
+                    <span onclick="switchTab('login')">Login</span>
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
 
     <!-- Hero Section -->
     <section id="hero">
@@ -477,7 +547,270 @@
     </div>
 </section>
 
+<!-- ================= BEST SELLER ================= -->
+<section id="best-seller">
+    <div class="container">
 
+        <!-- Header -->
+        <div class="bs-header">
+            <h2>Best Seller Products</h2>
+            <p>There are many variations of stylish Reijin footwear <br> made for comfort and everyday confidence.</p>
+        </div>
+
+        <!-- Slider Wrapper -->
+        <div class="bs-slider-wrapper">
+            <div class="bs-slider" id="bsSlider">
+
+                <!-- PAGE 1 -->
+                <div class="bs-page">
+                    <div class="bs-grid">
+
+                        <div class="bs-card active-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                                <a href="#" class="bs-shop">Shop Now</a>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PAGE 2 -->
+                <div class="bs-page">
+                    <div class="bs-grid">
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- PAGE 3 -->
+                <div class="bs-page">
+                    <div class="bs-grid">
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bs-card">
+                            <div class="bs-img-wrap">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="bs-info">
+                                <div>
+                                    <h5>Reijin Naomi</h5>
+                                    <p>Rp479.900</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dots -->
+        <div class="bs-dots">
+            <span class="bs-dot active" onclick="goToPage(0)"></span>
+            <span class="bs-dot" onclick="goToPage(1)"></span>
+            <span class="bs-dot" onclick="goToPage(2)"></span>
+        </div>
+
+    </div>
+</section>
 
 <!-- ================= CONTACT SECTION ================= -->
 <section id="contact-page">
@@ -612,7 +945,69 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    function switchTab(tab) {
+        const formLogin    = document.getElementById('formLogin');
+        const formRegister = document.getElementById('formRegister');
+        const tabLogin     = document.getElementById('tabLogin');
+        const tabRegister  = document.getElementById('tabRegister');
 
+        if (tab === 'login') {
+            formLogin.classList.remove('d-none');
+            formRegister.classList.add('d-none');
+            tabLogin.classList.add('active');
+            tabRegister.classList.remove('active');
+        } else {
+            formRegister.classList.remove('d-none');
+            formLogin.classList.add('d-none');
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+        }
+    }
+</script>
+
+<script>
+    // Best Seller Slider
+    let currentPage = 0;
+    const totalPages = 3;
+    const slider = document.getElementById('bsSlider');
+    const dots = document.querySelectorAll('.bs-dot');
+
+    function goToPage(index) {
+        currentPage = index;
+        slider.style.transform = `translateX(-${currentPage * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentPage));
+    }
+
+    // Drag / swipe
+    let startX = 0;
+    let isDragging = false;
+
+    slider.addEventListener('mousedown', (e) => {
+        startX = e.clientX;
+        isDragging = true;
+    });
+
+    document.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const diff = startX - e.clientX;
+        if (diff > 50 && currentPage < totalPages - 1) goToPage(currentPage + 1);
+        if (diff < -50 && currentPage > 0) goToPage(currentPage - 1);
+    });
+
+    // Touch support
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (diff > 50 && currentPage < totalPages - 1) goToPage(currentPage + 1);
+        if (diff < -50 && currentPage > 0) goToPage(currentPage - 1);
+    });
+</script>
+    
 </body>
 
 </html>
