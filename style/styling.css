@@ -766,6 +766,108 @@ transition:.3s;
 letter-spacing:1px;
 
 }
+/* ─── Layanan Badge ─────────────────────────────────────── */
+.badge-item i,
+.badge-text h6 {
+    color: #000000 !important;
+}
+.badge-text p {
+    color: #555555 !important;
+}
+
+#layanan-badge {
+    background-color: #ffffff;
+    padding: 40px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.layanan-badge-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.badge-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.badge-item i {
+    font-size: 36px;
+    color: var(--pr-color);
+    flex-shrink: 0;
+}
+
+.badge-text h6 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--pr-color);
+    margin-bottom: 2px;
+}
+
+.badge-text p {
+    font-size: 13px;
+    color: #888888;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+    .layanan-badge-wrap {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .badge-item {
+        min-width: calc(50% - 12px);
+        flex: 0 0 calc(50% - 12px);
+    }
+}
+
+@media (max-width: 400px) {
+    .badge-item {
+        min-width: 100%;
+        flex: 0 0 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ============================================================
    REIJIN — Responsive Mobile Styles
@@ -859,38 +961,6 @@ letter-spacing:1px;
         color: var(--pr-color);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ─── Hero Section ───────────────────────────────────────── */
 
