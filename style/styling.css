@@ -1388,17 +1388,28 @@ letter-spacing:1px;
     margin: 0;
 }
 
+/* Shop Button */
 .bs-shop {
     font-size: 14px;
     font-weight: 700;
     color: #ff3131;
     text-decoration: none;
     white-space: nowrap;
-    transition: opacity 0.2s;
+
+    /* Hidden default */
+    opacity: 0;
+    transform: translateY(8px);
+
+    transition: all 0.3s ease;
 }
 
 .bs-shop:hover {
     opacity: 0.7;
+}
+/* Muncul saat hover card */
+.bs-card:hover .bs-shop {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Dots */
@@ -1869,6 +1880,254 @@ letter-spacing:1px;
     }
 
 
+}
+
+/* ================= SPECIAL EDITION 2 ================= */
+
+#special-edition-2 {
+    padding: 0 0 60px;
+    background-color: #f7f7f7;
+}
+
+.special-banner-2 {
+    position: relative;
+    height: 300px;
+
+    display: flex;
+    align-items: flex-end;
+
+    border-radius: 24px;
+
+    cursor: pointer;
+    transition: all 0.25s ease-in;
+
+    /* penting */
+    overflow: visible;
+}
+
+/* Background layer */
+.special-banner-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-color: #2EE165;
+
+    border-radius: 24px;
+    z-index: 0;
+}
+
+.special-banner-2:hover {
+    transform: translateY(-6px);
+}
+
+/* Top Left */
+.se2-topleft {
+    position: absolute;
+    top: 24px;
+    left: 32px;
+    z-index: 3;
+}
+
+.se2-topleft p {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Big Name */
+.se2-title {
+    position: absolute;
+    bottom: -20px;
+    left: 24px;
+    z-index: 1;
+    transition: all 0.25s ease-in;
+}
+
+.se2-title h1 {
+    font-size: clamp(110px, 20vw, 220px);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -5px;
+    transition: all 0.25s ease-in;
+}
+
+.special-banner-2:hover .se2-title h1 {
+    letter-spacing: -1px;
+}
+
+/* Shoes */
+.se2-shoes {
+    position: absolute;
+
+    /* bikin keluar card */
+    bottom: -35px;
+
+    left: 50%;
+    transform: translateX(-40%);
+
+    z-index: 4;
+
+    width: 68%;
+    max-width: 760px;
+}
+
+.se2-shoes img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+
+    transition: all 0.25s ease-in;
+
+    /* MIRROR */
+    transform: scaleX(-1);
+}
+
+.special-banner-2:hover .se2-shoes img {
+    transform: scaleX(-1) translateY(-14px) scale(1.04);
+}
+
+/* Bottom Right */
+.se2-bottom-right {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.se2-edition-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.se2-btn {
+    background-color: #ffffff;
+    color: #111111;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 14px 32px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+    transition: all 0.25s ease-in;
+    white-space: nowrap;
+}
+
+.special-banner-2:hover .se2-btn {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991.98px) {
+
+    .special-banner-2 {
+        height: 260px;
+    }
+
+    .se2-title h1 {
+        font-size: clamp(80px, 18vw, 140px);
+        letter-spacing: -3px;
+    }
+
+    .se2-shoes {
+        width: 75%;
+        bottom: -20px;
+    }
+
+    .se2-edition-label {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+
+    .special-banner-2 {
+        height: 220px;
+        border-radius: 18px;
+    }
+
+    .special-banner-2::before {
+        border-radius: 18px;
+    }
+
+    .se2-title h1 {
+        font-size: clamp(68px, 20vw, 100px);
+        letter-spacing: -2px;
+    }
+
+    .se2-title {
+        bottom: -18px;
+    }
+
+    .se2-shoes {
+        width: 80%;
+        bottom: -15px;
+
+        transform: translateX(-38%);
+    }
+
+    .se2-btn {
+        padding: 10px 22px;
+        font-size: 13px;
+    }
+
+    .se2-topleft p {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+    .special-banner-2 {
+        height: 190px;
+        border-radius: 14px;
+    }
+
+    .special-banner-2::before {
+        border-radius: 14px;
+    }
+
+    .se2-topleft {
+        top: 16px;
+        left: 20px;
+    }
+
+    .se2-bottom-right {
+        bottom: 18px;
+        right: 20px;
+        gap: 10px;
+    }
+
+    .se2-title {
+        left: 16px;
+        bottom: -14px;
+    }
+
+    .se2-shoes {
+        width: 85%;
+        bottom: -10px;
+
+        transform: translateX(-36%);
+    }
 }
 
 /* ================= SPECIAL EDITION ================= */
