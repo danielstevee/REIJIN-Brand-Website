@@ -4,27 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart - Reijin</title>
-    <link rel="stylesheet" href="../REIJIN-Brand-Website/style/cart.css">
+    <link rel="stylesheet" href="style/cart.css">
+    <link rel="stylesheet" href="style/styling.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="logo">REIJIN</div>
-            <nav class="main-nav">
-                <a href="#">Home</a>
-                <a href="#">New Collection</a>
-                <a href="#">Special Edition</a>
-                <a href="#">Contact</a>
-            </nav>
-            <div class="header-actions">
-                <a href="#" class="login-link">Login</a>
-                <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
-                <a href="#" class="icon-link"><i class="fas fa-shopping-cart"></i></a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="asset/logoreijin.png" alt="REIJIN Logo" class="logo-img">
+            </a>
+
+            <!-- Toggle -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+                <i class="bi bi-list"></i>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- Center Nav -->
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#new-collection">New Collection</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#best-seller">Best Seller</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact-page">Contact</a>
+                    </li>
+
+                </ul>
+
+                <!-- Right -->
+                <div class="nav-right">
+
+                    <a href="#" class="login-btn" data-bs-toggle="modal" data-bs-target="#authModal">Login</a>
+
+                    <i class="bi bi-search icon-nav"></i>
+
+                    <a href="cart.html" class="icon-nav">
+                        <i class="bi bi-cart3"></i>
+                    </a>
+
+                </div>
+
             </div>
-        </header>
+        </div>
+    </nav>
+
+<!-- ================= MODAL LOGIN / REGISTER ================= -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content auth-modal">
+
+            <!-- Close -->
+            <button type="button"
+                class="auth-close"
+                data-bs-dismiss="modal">
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+            <!-- Brand -->
+            <div class="auth-brand">
+
+                <img src="asset/logoreijin.png"
+                    alt="REIJIN Logo"
+                    class="auth-logo">
+
+            </div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+
+                <button class="auth-tab active"
+                    id="tabLogin"
+                    onclick="switchTab('login')">
+
+                    Login
+
+                </button>
+
+                <button class="auth-tab"
+                    id="tabRegister"
+                    onclick="switchTab('register')">
+
+                    Register
+
+                </button>
+
+            </div>
+
+            <!-- Login -->
+            <div class="auth-form" id="formLogin">
+
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+                <div class="auth-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+
+                <button class="auth-btn">Login</button>
+
+            </div>
+
+            <!-- Register -->
+            <div class="auth-form d-none" id="formRegister">
+
+                <div class="auth-field">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name">
+                </div>
+
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+
+                <div class="auth-field">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create password">
+                </div>
+
+                <button class="auth-btn">Create Account</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+
+    <!-- Close -->
+    <div class="search-close" id="closeSearch">
+        <i class="bi bi-x-lg"></i>
+    </div>
+
+    <div class="search-box-wrap">
+
+        <h2>Search Products</h2>
+
+        <div class="search-input-wrap">
+
+            <i class="bi bi-search"></i>
+
+            <input type="text"
+                id="searchInput"
+                placeholder="Search your shoes...">
+
+        </div>
+
+        <!-- Results -->
+        <div class="search-results" id="searchResults">
+
+            <a href="#" class="search-item">
+                Reijin Naomi
+            </a>
+
+            <a href="#" class="search-item">
+                Reijin Black
+            </a>
+
+            <a href="#" class="search-item">
+                Reijin Red
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
         <main>
             <section class="hero-title">
@@ -36,7 +228,7 @@
                 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -49,7 +241,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -62,7 +254,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -75,7 +267,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -88,7 +280,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -101,7 +293,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="../REIJIN-Brand-Website/asset/new1.png" alt="Reijin Naomi">
+                        <img src="asset/new1.png" alt="Reijin Naomi">
                     </div>
                     <div class="product-info">
                         <div class="text-area">
@@ -123,19 +315,160 @@
             </div>
         </main>
     </div>
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+    <div class="container footer-wrap">
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">REIJIN</div>
-            <div class="copyright">Copyright by Kreticat Design All Right Reserved</div>
-            <div class="footer-links">
-                <a href="#">Beranda</a>
-                <a href="#">Layanan</a>
-                <a href="#">Fitur</a>
-                <a href="#">Kontak</a>
-            </div>
+        <div class="footer-left">
+            <img src="asset/logoreijin.png" alt="REIJIN" class="footer-logo">
         </div>
-    </footer>
+        <div <p class="footer-copy mt-4">Copyright by REIJIN Footwear. All Right Reserved</p> </div>
+        <nav class="footer-nav">
+            <a href="index.html">Home</a>
+            <a href="#new-shop">New Collection</a>
+            <a href="#best-seller">Best Seller</a>
+            <a href="#contact-page">Contact</a>
+        </nav>
 
+    </div>
+</footer>
+
+<script>
+
+/* LOGIN TAB */
+function switchTab(tab) {
+
+    const formLogin =
+    document.getElementById('formLogin');
+
+    const formRegister =
+    document.getElementById('formRegister');
+
+    const tabLogin =
+    document.getElementById('tabLogin');
+
+    const tabRegister =
+    document.getElementById('tabRegister');
+
+    if (tab === 'login') {
+
+        formLogin.classList.remove('d-none');
+        formRegister.classList.add('d-none');
+
+        tabLogin.classList.add('active');
+        tabRegister.classList.remove('active');
+
+    } else {
+
+        formRegister.classList.remove('d-none');
+        formLogin.classList.add('d-none');
+
+        tabRegister.classList.add('active');
+        tabLogin.classList.remove('active');
+
+    }
+}
+
+
+/* SEARCH */
+const searchOverlay =
+document.getElementById("searchOverlay");
+
+const closeSearch =
+document.getElementById("closeSearch");
+
+const searchInput =
+document.getElementById("searchInput");
+
+const searchResults =
+document.getElementById("searchResults");
+
+/* ICON */
+document.querySelector(".bi-search")
+.addEventListener("click", () => {
+
+    searchOverlay.classList.add("active");
+
+    setTimeout(() => {
+        searchInput.focus();
+    }, 200);
+
+});
+
+/* CLOSE */
+closeSearch.addEventListener("click", () => {
+    searchOverlay.classList.remove("active");
+});
+
+/* ESC */
+window.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+        searchOverlay.classList.remove("active");
+    }
+
+});
+
+/* FILTER */
+searchInput.addEventListener("keyup", () => {
+
+    const filter =
+    searchInput.value.toLowerCase();
+
+    const items =
+    document.querySelectorAll(".search-item");
+
+    items.forEach(item => {
+
+        const text =
+        item.textContent.toLowerCase();
+
+        item.style.display =
+        text.includes(filter)
+        ? "block"
+        : "none";
+
+    });
+
+    if(filter.length > 0){
+        searchResults.classList.add("active");
+    } else {
+        searchResults.classList.remove("active");
+    }
+
+});
+
+</script>
+
+<script>
+
+    /* LOGIN TAB */
+    function switchTab(tab) {
+
+        const formLogin = document.getElementById('formLogin');
+        const formRegister = document.getElementById('formRegister');
+
+        const tabLogin = document.getElementById('tabLogin');
+        const tabRegister = document.getElementById('tabRegister');
+
+        if (tab === 'login') {
+
+            formLogin.classList.remove('d-none');
+            formRegister.classList.add('d-none');
+
+            tabLogin.classList.add('active');
+            tabRegister.classList.remove('active');
+
+        } else {
+
+            formRegister.classList.remove('d-none');
+            formLogin.classList.add('d-none');
+
+            tabRegister.classList.add('active');
+            tabLogin.classList.remove('active');
+        }
+    }
+
+</script>
 </body>
 </html>
