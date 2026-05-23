@@ -1015,15 +1015,11 @@
 
         </div>
     </section>
-
- <!-- ================= CHECKOUT MODAL ================= -->
-<!-- Taruh sebelum closing </body> tag -->
-
+<!-- ================= CHECKOUT MODAL ================= -->
 <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable checkout-dialog">
         <div class="modal-content checkout-modal">
 
-            <!-- Close Button -->
             <button class="checkout-close" data-bs-dismiss="modal">
                 <i class="bi bi-x-lg"></i>
             </button>
@@ -1034,17 +1030,27 @@
                     <!-- ===== LEFT: Shipping + Payment ===== -->
                     <div class="checkout-left">
 
-                        <!-- Shipping Address -->
                         <h5 class="checkout-section-title">Shipping Address</h5>
 
+                        <!-- Name -->
                         <div class="co-field">
                             <label>Name</label>
                             <div class="co-input-wrap">
                                 <i class="bi bi-person"></i>
-                                <input type="text" placeholder="First &amp; Last Name">
+                                <input type="text" id="coName" placeholder="First &amp; Last Name">
                             </div>
                         </div>
 
+                        <!-- ✅ EMAIL — taruh di sini, setelah Name -->
+                        <div class="co-field">
+                            <label>Email</label>
+                            <div class="co-input-wrap">
+                                <i class="bi bi-envelope"></i>
+                                <input type="email" id="coEmail" placeholder="email@gmail.com" required>
+                            </div>
+                        </div>
+
+                        <!-- Address 1 -->
                         <div class="co-field">
                             <label>Address 1</label>
                             <div class="co-input-wrap">
@@ -1053,6 +1059,7 @@
                             </div>
                         </div>
 
+                        <!-- Address 2 -->
                         <div class="co-field">
                             <label>Address 2</label>
                             <div class="co-input-wrap">
@@ -1061,6 +1068,7 @@
                             </div>
                         </div>
 
+                        <!-- City / State / Zip -->
                         <div class="co-row">
                             <div class="co-field">
                                 <label>City</label>
@@ -1092,13 +1100,11 @@
                             </div>
                         </div>
 
-                        <!-- Divider -->
                         <div class="co-section-divider"></div>
 
                         <!-- Payment Method -->
                         <h5 class="checkout-section-title">Payment Method</h5>
 
-                        <!-- Payment Tabs -->
                         <div class="co-pay-tabs">
                             <button class="co-pay-tab active" data-panel="pay-card">
                                 <i class="bi bi-credit-card-2-front"></i> Credit Card
@@ -1113,8 +1119,6 @@
 
                         <!-- TAB: Credit Card -->
                         <div class="co-pay-panel" id="pay-card">
-
-                            <!-- Card Preview -->
                             <div class="co-card-preview">
                                 <div class="co-card-chip"><i class="bi bi-cpu"></i></div>
                                 <div class="co-card-number-preview" id="cardNumberPreview">•••• •••• •••• ••••</div>
@@ -1132,7 +1136,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="co-field">
                                 <label>Card Number</label>
                                 <div class="co-input-wrap">
@@ -1145,7 +1148,6 @@
                                     </span>
                                 </div>
                             </div>
-
                             <div class="co-field">
                                 <label>Cardholder Name</label>
                                 <div class="co-input-wrap">
@@ -1154,7 +1156,6 @@
                                         oninput="document.getElementById('cardNamePreview').textContent = this.value.toUpperCase() || 'FULL NAME'">
                                 </div>
                             </div>
-
                             <div class="co-row">
                                 <div class="co-field">
                                     <label>Expiry Date</label>
@@ -1175,14 +1176,11 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- TAB: Bank Transfer -->
                         <div class="co-pay-panel" id="pay-transfer" style="display:none">
-
                             <div class="co-bank-list">
-
                                 <label class="co-bank-option">
                                     <input type="radio" name="bank" value="bca" checked>
                                     <div class="co-bank-card">
@@ -1195,7 +1193,6 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                                 <label class="co-bank-option">
                                     <input type="radio" name="bank" value="mandiri">
                                     <div class="co-bank-card">
@@ -1208,7 +1205,6 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                                 <label class="co-bank-option">
                                     <input type="radio" name="bank" value="bni">
                                     <div class="co-bank-card">
@@ -1221,9 +1217,7 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                             </div>
-
                             <div class="co-field" style="margin-top:16px">
                                 <label>Nama Pengirim</label>
                                 <div class="co-input-wrap">
@@ -1231,19 +1225,15 @@
                                     <input type="text" placeholder="Nama sesuai rekening">
                                 </div>
                             </div>
-
                             <div class="co-transfer-note">
                                 <i class="bi bi-info-circle"></i>
                                 Transfer dalam 1x24 jam. Upload bukti transfer setelah pembayaran.
                             </div>
-
                         </div>
 
                         <!-- TAB: E-Wallet -->
                         <div class="co-pay-panel" id="pay-ewallet" style="display:none">
-
                             <div class="co-ewallet-list">
-
                                 <label class="co-ew-option">
                                     <input type="radio" name="ewallet" value="gopay" checked>
                                     <div class="co-ew-card">
@@ -1252,7 +1242,6 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                                 <label class="co-ew-option">
                                     <input type="radio" name="ewallet" value="ovo">
                                     <div class="co-ew-card">
@@ -1261,7 +1250,6 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                                 <label class="co-ew-option">
                                     <input type="radio" name="ewallet" value="dana">
                                     <div class="co-ew-card">
@@ -1270,7 +1258,6 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                                 <label class="co-ew-option">
                                     <input type="radio" name="ewallet" value="shopeepay">
                                     <div class="co-ew-card">
@@ -1279,9 +1266,7 @@
                                         <i class="bi bi-check-circle-fill co-bank-check"></i>
                                     </div>
                                 </label>
-
                             </div>
-
                             <div class="co-field" style="margin-top:16px">
                                 <label>Nomor HP / E-Wallet</label>
                                 <div class="co-input-wrap">
@@ -1289,15 +1274,13 @@
                                     <input type="tel" placeholder="08xxxxxxxxxx" inputmode="numeric">
                                 </div>
                             </div>
-
                             <div class="co-transfer-note">
                                 <i class="bi bi-info-circle"></i>
                                 Kamu akan diarahkan ke aplikasi e-wallet untuk konfirmasi pembayaran.
                             </div>
-
                         </div>
 
-                    </div>
+                    </div><!-- /checkout-left -->
 
                     <!-- Divider vertical -->
                     <div class="checkout-divider-v"></div>
@@ -1306,7 +1289,6 @@
                     <div class="checkout-right">
                         <h5 class="checkout-section-title">Order Summary</h5>
 
-                        <!-- Product -->
                         <div class="co-product">
                             <div class="co-product-img">
                                 <img src="asset/special1.png" alt="Reijin Naomi">
@@ -1317,47 +1299,54 @@
                             </div>
                         </div>
 
-                        <!-- Price Breakdown -->
                         <div class="co-price-list">
                             <div class="co-price-row">
-                                <span>Subtotal</span>
-                                <span>Rp479.900</span>
+                                <span>Subtotal</span><span>Rp479.900</span>
                             </div>
                             <div class="co-price-row">
-                                <span>Shipping</span>
-                                <span>Rp479.900</span>
+                                <span>Shipping</span><span>Rp479.900</span>
                             </div>
                             <div class="co-price-row">
-                                <span>Tax</span>
-                                <span>Rp479.900</span>
+                                <span>Tax</span><span>Rp479.900</span>
                             </div>
                         </div>
 
                         <div class="co-price-divider"></div>
 
-                        <!-- Total -->
                         <div class="co-price-row co-total">
-                            <span>Total</span>
-                            <span>Rp479.900</span>
+                            <span>Total</span><span>Rp479.900</span>
                         </div>
 
-                        <!-- Security badges -->
                         <div class="co-security">
                             <i class="bi bi-shield-check"></i>
                             <span>Pembayaran aman &amp; terenkripsi SSL</span>
                         </div>
 
-                        <!-- Place Order -->
-                        <button class="co-place-order" data-bs-dismiss="modal">
-                            <i class="bi bi-lock-fill"></i> Place Order
-                        </button>
+<button onclick="window.location.href='popup-checkout.html'"
+        class="co-place-order"
+        type="button">
 
-                    </div>
+    <i class="bi bi-lock-fill"></i>
+    <span id="placeOrderText">Place Order</span>
 
-                </div>
-            </div>
+</button>
+
+                    </div><!-- /checkout-right -->
+
+                </div><!-- /checkout-body -->
+            </div><!-- /modal-body -->
 
         </div>
+    </div>
+</div>
+<!-- ================= END CHECKOUT MODAL ================= -->
+
+<!-- ✅ TOAST — di luar modal, sebelum </body> -->
+<div class="co-toast" id="coToast">
+    <i class="bi bi-check-circle-fill"></i>
+    <div>
+        <strong>Order berhasil!</strong>
+        <p>Bukti transaksi dikirim ke email kamu.</p>
     </div>
 </div>
 
@@ -1382,6 +1371,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
+     <script src="checkout-emailjs.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function switchTab(tab) {
