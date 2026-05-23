@@ -2478,3 +2478,593 @@ letter-spacing:1px;
         top:28px;
     }
 }
+
+
+/* ================= CHECKOUT MODAL ================= */
+
+.checkout-dialog {
+    max-width: 860px;
+    width: 95%;
+    margin: auto;
+    max-height: 90vh;
+}
+
+.checkout-modal {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    max-height: 90vh;
+}
+
+/* Scrollable body */
+.checkout-modal .modal-body {
+    overflow-y: auto;
+    max-height: calc(90vh - 20px);
+    padding: 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+.checkout-modal .modal-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.checkout-modal .modal-body::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.checkout-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #111;
+    cursor: pointer;
+    z-index: 100;
+    padding: 4px;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.checkout-close:hover { opacity: 0.4; }
+
+/* Body: 2 kolom */
+.checkout-body {
+    display: flex;
+    align-items: stretch;
+    min-height: 500px;
+}
+
+/* Divider vertikal */
+.checkout-divider-v {
+    width: 1px;
+    background-color: #ebebeb;
+    flex-shrink: 0;
+}
+
+/* Section divider horizontal */
+.co-section-divider {
+    height: 1px;
+    background: #ebebeb;
+    margin: 24px 0;
+}
+
+/* ===== LEFT ===== */
+.checkout-left {
+    flex: 1;
+    padding: 40px 36px 40px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== RIGHT ===== */
+.checkout-right {
+    width: 300px;
+    flex-shrink: 0;
+    padding: 40px 36px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+/* Section title */
+.checkout-section-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+/* Field */
+.co-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.co-field label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 7px;
+}
+
+/* Input wrap with icon */
+.co-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.co-input-wrap > i:first-child {
+    position: absolute;
+    left: 16px;
+    font-size: 15px;
+    color: #aaa;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.co-input-wrap input,
+.co-input-wrap select {
+    width: 100%;
+    height: 50px;
+    border: 1.5px solid #d8d8d8;
+    border-radius: 12px;
+    padding: 0 16px 0 42px;
+    font-size: 14px;
+    color: #111;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    outline: none;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.co-input-wrap input:focus,
+.co-input-wrap select:focus {
+    border-color: #111;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+.co-input-wrap input::placeholder { color: #bbb; }
+
+.co-select-wrap select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+/* Card icons in number field */
+.co-card-icons {
+    position: absolute;
+    right: 14px;
+    display: flex;
+    gap: 4px;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* CVV tip */
+.co-cvv-tip {
+    position: absolute;
+    right: 14px;
+    color: #bbb;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* City / State / Zip row */
+.co-row {
+    display: flex;
+    gap: 10px;
+}
+
+.co-row .co-field { flex: 1; }
+
+/* ===== PAYMENT TABS ===== */
+.co-pay-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.co-pay-tab {
+    flex: 1;
+    height: 42px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.co-pay-tab i { font-size: 14px; }
+
+.co-pay-tab.active {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+}
+
+.co-pay-tab:not(.active):hover {
+    border-color: #111;
+    color: #111;
+}
+
+/* ===== CARD PREVIEW ===== */
+.co-card-preview {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    border-radius: 16px;
+    padding: 22px 24px 18px;
+    margin-bottom: 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    min-height: 130px;
+}
+
+.co-card-preview::before {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -60px;
+    right: -40px;
+}
+
+.co-card-preview::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+    bottom: -30px;
+    left: 40px;
+}
+
+.co-card-chip {
+    font-size: 22px;
+    margin-bottom: 14px;
+    opacity: 0.8;
+}
+
+.co-card-number-preview {
+    font-size: 17px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: monospace;
+}
+
+.co-card-bottom {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.co-card-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    margin-bottom: 2px;
+}
+
+.co-card-value {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.co-card-brand {
+    margin-left: auto;
+    font-size: 28px;
+    opacity: 0.7;
+}
+
+/* ===== BANK TRANSFER ===== */
+.co-bank-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.co-bank-option input[type="radio"] { display: none; }
+
+.co-bank-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.co-bank-option input:checked + .co-bank-card {
+    border-color: #111;
+    background: #fafafa;
+}
+
+.co-bank-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 800;
+    flex-shrink: 0;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.bca-icon  { background: #0060a9; }
+.mandiri-icon { background: #003d82; }
+.bni-icon  { background: #f77f00; }
+
+.co-bank-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.co-bank-info strong { font-size: 13px; color: #111; }
+.co-bank-info span   { font-size: 12px; color: #888; line-height: 1.5; }
+
+.co-bank-check {
+    font-size: 18px;
+    color: #e0e0e0;
+    transition: color 0.2s;
+}
+
+.co-bank-option input:checked ~ .co-bank-card .co-bank-check,
+.co-bank-option input:checked + .co-bank-card .co-bank-check {
+    color: #111;
+}
+
+/* ===== E-WALLET ===== */
+.co-ewallet-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.co-ew-option input[type="radio"] { display: none; }
+
+.co-ew-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+}
+
+.co-ew-option input:checked + .co-ew-card {
+    border-color: #111;
+    background: #fafafa;
+}
+
+.co-ew-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+}
+
+.gopay-icon  { background: linear-gradient(135deg, #00aed6, #00c8a0); }
+.ovo-icon    { background: linear-gradient(135deg, #4c3494, #6b4ed8); }
+.dana-icon   { background: linear-gradient(135deg, #118eea, #1ec8ef); }
+.spay-icon   { background: linear-gradient(135deg, #ee4d2d, #ff7337); }
+
+.co-ew-card .co-bank-check {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 14px;
+}
+
+/* Transfer note */
+.co-transfer-note {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 4px;
+    line-height: 1.6;
+}
+
+.co-transfer-note i {
+    font-size: 14px;
+    color: #888;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+/* ===== ORDER SUMMARY RIGHT ===== */
+.co-product {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.co-product-img {
+    width: 100px;
+    height: 80px;
+    background: #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.co-product-img img {
+    width: 200%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.co-product-info h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+    margin: 0 0 6px;
+    line-height: 1.2;
+}
+
+.co-product-info p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.co-price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.co-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.co-price-row span:first-child { font-size: 13px; color: #888; }
+.co-price-row span:last-child  { font-size: 13px; color: #888; font-weight: 500; }
+
+.co-price-divider {
+    height: 1px;
+    background: #e0e0e0;
+    margin-bottom: 14px;
+}
+
+.co-total span:first-child,
+.co-total span:last-child {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Security */
+.co-security {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-size: 11px;
+    color: #aaa;
+}
+
+.co-security i { font-size: 14px; color: #4caf50; }
+
+/* Place Order Button */
+.co-place-order {
+    width: 100%;
+    height: 56px;
+    background: linear-gradient(90deg, #ff3131, #ff5757);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.co-place-order:hover {
+    opacity: 0.88;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767.98px) {
+    .checkout-body { flex-direction: column; }
+    .checkout-divider-v { display: none; }
+
+    .checkout-left {
+        padding: 32px 24px 24px;
+        border-bottom: 1px solid #ebebeb;
+    }
+
+    .checkout-right {
+        width: 100%;
+        padding: 24px 24px 32px;
+        position: static;
+    }
+
+    .co-row { flex-wrap: wrap; }
+    .co-row .co-field { min-width: calc(50% - 5px); }
+
+    .checkout-dialog {
+        width: 100%;
+        margin: 0;
+        align-items: flex-end;
+        max-height: 95vh;
+    }
+
+    .checkout-modal {
+        border-radius: 20px 20px 0 0;
+        max-height: 95vh;
+    }
+
+    .co-pay-tab { font-size: 11px; }
+    .co-ewallet-list { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .co-row .co-field { min-width: 100%; }
+    .co-ewallet-list { grid-template-columns: 1fr 1fr; }
+}

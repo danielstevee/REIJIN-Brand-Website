@@ -211,8 +211,7 @@
 
                 <h1>Daisuke</h1>
 
-                <button class="btn-shop">
-                    Shop Now
+                <button class="btn-shop" data-bs-toggle="modal" data-bs-target="#checkoutModal">Shop Now</button>
                 </button>
 
             </div>
@@ -1017,6 +1016,352 @@
         </div>
     </section>
 
+ <!-- ================= CHECKOUT MODAL ================= -->
+<!-- Taruh sebelum closing </body> tag -->
+
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable checkout-dialog">
+        <div class="modal-content checkout-modal">
+
+            <!-- Close Button -->
+            <button class="checkout-close" data-bs-dismiss="modal">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <div class="modal-body p-0">
+                <div class="checkout-body">
+
+                    <!-- ===== LEFT: Shipping + Payment ===== -->
+                    <div class="checkout-left">
+
+                        <!-- Shipping Address -->
+                        <h5 class="checkout-section-title">Shipping Address</h5>
+
+                        <div class="co-field">
+                            <label>Name</label>
+                            <div class="co-input-wrap">
+                                <i class="bi bi-person"></i>
+                                <input type="text" placeholder="First &amp; Last Name">
+                            </div>
+                        </div>
+
+                        <div class="co-field">
+                            <label>Address 1</label>
+                            <div class="co-input-wrap">
+                                <i class="bi bi-geo-alt"></i>
+                                <input type="text" placeholder="Jl.Cipunegara no.55A">
+                            </div>
+                        </div>
+
+                        <div class="co-field">
+                            <label>Address 2</label>
+                            <div class="co-input-wrap">
+                                <i class="bi bi-building"></i>
+                                <input type="text" placeholder="Apartment, suite, etc.">
+                            </div>
+                        </div>
+
+                        <div class="co-row">
+                            <div class="co-field">
+                                <label>City</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-map"></i>
+                                    <input type="text" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="co-field">
+                                <label>State</label>
+                                <div class="co-input-wrap co-select-wrap">
+                                    <i class="bi bi-globe-asia-australia"></i>
+                                    <select>
+                                        <option value="">State</option>
+                                        <option>Jawa Timur</option>
+                                        <option>Jawa Barat</option>
+                                        <option>Jawa Tengah</option>
+                                        <option>DKI Jakarta</option>
+                                        <option>Bali</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="co-field">
+                                <label>Zip</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-mailbox"></i>
+                                    <input type="text" placeholder="Zip code">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="co-section-divider"></div>
+
+                        <!-- Payment Method -->
+                        <h5 class="checkout-section-title">Payment Method</h5>
+
+                        <!-- Payment Tabs -->
+                        <div class="co-pay-tabs">
+                            <button class="co-pay-tab active" data-panel="pay-card">
+                                <i class="bi bi-credit-card-2-front"></i> Credit Card
+                            </button>
+                            <button class="co-pay-tab" data-panel="pay-transfer">
+                                <i class="bi bi-bank"></i> Bank Transfer
+                            </button>
+                            <button class="co-pay-tab" data-panel="pay-ewallet">
+                                <i class="bi bi-phone"></i> E-Wallet
+                            </button>
+                        </div>
+
+                        <!-- TAB: Credit Card -->
+                        <div class="co-pay-panel" id="pay-card">
+
+                            <!-- Card Preview -->
+                            <div class="co-card-preview">
+                                <div class="co-card-chip"><i class="bi bi-cpu"></i></div>
+                                <div class="co-card-number-preview" id="cardNumberPreview">•••• •••• •••• ••••</div>
+                                <div class="co-card-bottom">
+                                    <div>
+                                        <div class="co-card-label">Card Holder</div>
+                                        <div class="co-card-value" id="cardNamePreview">FULL NAME</div>
+                                    </div>
+                                    <div>
+                                        <div class="co-card-label">Expires</div>
+                                        <div class="co-card-value" id="cardExpPreview">MM/YY</div>
+                                    </div>
+                                    <div class="co-card-brand">
+                                        <i class="bi bi-credit-card-2-back-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="co-field">
+                                <label>Card Number</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-credit-card"></i>
+                                    <input type="text" placeholder="1234 5678 9012 3456" maxlength="19"
+                                        id="cardNumber" oninput="formatCard(this)" inputmode="numeric">
+                                    <span class="co-card-icons">
+                                        <i class="bi bi-credit-card-2-front-fill" style="color:#1a1f71"></i>
+                                        <i class="bi bi-credit-card-fill" style="color:#eb001b"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="co-field">
+                                <label>Cardholder Name</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-person-badge"></i>
+                                    <input type="text" placeholder="Name on card" id="cardName"
+                                        oninput="document.getElementById('cardNamePreview').textContent = this.value.toUpperCase() || 'FULL NAME'">
+                                </div>
+                            </div>
+
+                            <div class="co-row">
+                                <div class="co-field">
+                                    <label>Expiry Date</label>
+                                    <div class="co-input-wrap">
+                                        <i class="bi bi-calendar3"></i>
+                                        <input type="text" placeholder="MM / YY" maxlength="7" id="cardExp"
+                                            oninput="formatExp(this)" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="co-field">
+                                    <label>CVV</label>
+                                    <div class="co-input-wrap">
+                                        <i class="bi bi-shield-lock"></i>
+                                        <input type="password" placeholder="•••" maxlength="4" inputmode="numeric">
+                                        <span class="co-cvv-tip" title="3-4 digit di belakang kartu">
+                                            <i class="bi bi-question-circle"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- TAB: Bank Transfer -->
+                        <div class="co-pay-panel" id="pay-transfer" style="display:none">
+
+                            <div class="co-bank-list">
+
+                                <label class="co-bank-option">
+                                    <input type="radio" name="bank" value="bca" checked>
+                                    <div class="co-bank-card">
+                                        <div class="co-bank-icon bca-icon">BCA</div>
+                                        <div class="co-bank-info">
+                                            <strong>Bank Central Asia</strong>
+                                            <span>No. Rek: 1234567890</span>
+                                            <span>a.n REIJIN Footwear</span>
+                                        </div>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                                <label class="co-bank-option">
+                                    <input type="radio" name="bank" value="mandiri">
+                                    <div class="co-bank-card">
+                                        <div class="co-bank-icon mandiri-icon">MDR</div>
+                                        <div class="co-bank-info">
+                                            <strong>Bank Mandiri</strong>
+                                            <span>No. Rek: 0987654321</span>
+                                            <span>a.n REIJIN Footwear</span>
+                                        </div>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                                <label class="co-bank-option">
+                                    <input type="radio" name="bank" value="bni">
+                                    <div class="co-bank-card">
+                                        <div class="co-bank-icon bni-icon">BNI</div>
+                                        <div class="co-bank-info">
+                                            <strong>Bank Negara Indonesia</strong>
+                                            <span>No. Rek: 1122334455</span>
+                                            <span>a.n REIJIN Footwear</span>
+                                        </div>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                            </div>
+
+                            <div class="co-field" style="margin-top:16px">
+                                <label>Nama Pengirim</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-person"></i>
+                                    <input type="text" placeholder="Nama sesuai rekening">
+                                </div>
+                            </div>
+
+                            <div class="co-transfer-note">
+                                <i class="bi bi-info-circle"></i>
+                                Transfer dalam 1x24 jam. Upload bukti transfer setelah pembayaran.
+                            </div>
+
+                        </div>
+
+                        <!-- TAB: E-Wallet -->
+                        <div class="co-pay-panel" id="pay-ewallet" style="display:none">
+
+                            <div class="co-ewallet-list">
+
+                                <label class="co-ew-option">
+                                    <input type="radio" name="ewallet" value="gopay" checked>
+                                    <div class="co-ew-card">
+                                        <div class="co-ew-icon gopay-icon"><i class="bi bi-phone-fill"></i></div>
+                                        <span>GoPay</span>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                                <label class="co-ew-option">
+                                    <input type="radio" name="ewallet" value="ovo">
+                                    <div class="co-ew-card">
+                                        <div class="co-ew-icon ovo-icon"><i class="bi bi-wallet2"></i></div>
+                                        <span>OVO</span>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                                <label class="co-ew-option">
+                                    <input type="radio" name="ewallet" value="dana">
+                                    <div class="co-ew-card">
+                                        <div class="co-ew-icon dana-icon"><i class="bi bi-lightning-charge-fill"></i></div>
+                                        <span>DANA</span>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                                <label class="co-ew-option">
+                                    <input type="radio" name="ewallet" value="shopeepay">
+                                    <div class="co-ew-card">
+                                        <div class="co-ew-icon spay-icon"><i class="bi bi-bag-heart-fill"></i></div>
+                                        <span>ShopeePay</span>
+                                        <i class="bi bi-check-circle-fill co-bank-check"></i>
+                                    </div>
+                                </label>
+
+                            </div>
+
+                            <div class="co-field" style="margin-top:16px">
+                                <label>Nomor HP / E-Wallet</label>
+                                <div class="co-input-wrap">
+                                    <i class="bi bi-phone"></i>
+                                    <input type="tel" placeholder="08xxxxxxxxxx" inputmode="numeric">
+                                </div>
+                            </div>
+
+                            <div class="co-transfer-note">
+                                <i class="bi bi-info-circle"></i>
+                                Kamu akan diarahkan ke aplikasi e-wallet untuk konfirmasi pembayaran.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Divider vertical -->
+                    <div class="checkout-divider-v"></div>
+
+                    <!-- ===== RIGHT: Order Summary ===== -->
+                    <div class="checkout-right">
+                        <h5 class="checkout-section-title">Order Summary</h5>
+
+                        <!-- Product -->
+                        <div class="co-product">
+                            <div class="co-product-img">
+                                <img src="asset/special1.png" alt="Reijin Naomi">
+                            </div>
+                            <div class="co-product-info">
+                                <h4>Reijin Naomi</h4>
+                                <p>Sepatu Sneakers<br>Casual Wanita Dewasa</p>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="co-price-list">
+                            <div class="co-price-row">
+                                <span>Subtotal</span>
+                                <span>Rp479.900</span>
+                            </div>
+                            <div class="co-price-row">
+                                <span>Shipping</span>
+                                <span>Rp479.900</span>
+                            </div>
+                            <div class="co-price-row">
+                                <span>Tax</span>
+                                <span>Rp479.900</span>
+                            </div>
+                        </div>
+
+                        <div class="co-price-divider"></div>
+
+                        <!-- Total -->
+                        <div class="co-price-row co-total">
+                            <span>Total</span>
+                            <span>Rp479.900</span>
+                        </div>
+
+                        <!-- Security badges -->
+                        <div class="co-security">
+                            <i class="bi bi-shield-check"></i>
+                            <span>Pembayaran aman &amp; terenkripsi SSL</span>
+                        </div>
+
+                        <!-- Place Order -->
+                        <button class="co-place-order" data-bs-dismiss="modal">
+                            <i class="bi bi-lock-fill"></i> Place Order
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
     <!-- ================= FOOTER ================= -->
     <footer id="footer">
         <div class="container footer-wrap">
@@ -1037,7 +1382,7 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function switchTab(tab) {
             const formLogin = document.getElementById('formLogin');
@@ -1203,6 +1548,78 @@
 
     </script>
 
+     <!-- ── Checkout Modal ── -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+ 
+            /* Init: tampilkan hanya panel pertama */
+            document.querySelectorAll('.co-pay-panel').forEach(function (p, i) {
+                p.style.display = i === 0 ? 'block' : 'none';
+            });
+ 
+            /* Tab switching */
+            document.querySelectorAll('.co-pay-tab').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var targetId = this.getAttribute('data-panel');
+ 
+                    document.querySelectorAll('.co-pay-tab').forEach(function (t) {
+                        t.classList.remove('active');
+                    });
+                    document.querySelectorAll('.co-pay-panel').forEach(function (p) {
+                        p.style.display = 'none';
+                    });
+ 
+                    this.classList.add('active');
+                    document.getElementById(targetId).style.display = 'block';
+                });
+            });
+ 
+            /* Radio bank & e-wallet highlight */
+            document.addEventListener('change', function (e) {
+                var name = e.target && e.target.name;
+                if (name !== 'bank' && name !== 'ewallet') return;
+ 
+                document.querySelectorAll('input[name="' + name + '"]').forEach(function (r) {
+                    var card  = r.nextElementSibling;
+                    if (!card) return;
+                    var check = card.querySelector('.co-bank-check');
+                    if (check) check.style.color = '#e0e0e0';
+                    card.style.borderColor = '#e0e0e0';
+                    card.style.background  = '#fff';
+                });
+ 
+                var sel   = e.target.nextElementSibling;
+                if (sel) {
+                    var check = sel.querySelector('.co-bank-check');
+                    if (check) check.style.color = '#111';
+                    sel.style.borderColor = '#111';
+                    sel.style.background  = '#fafafa';
+                }
+            });
+        });
+ 
+        /* Format card number */
+        function formatCard(input) {
+            var val = input.value.replace(/\D/g, '').substring(0, 16);
+            val = val.replace(/(.{4})/g, '$1 ').trim();
+            input.value = val;
+            var preview = document.getElementById('cardNumberPreview');
+            if (preview) {
+                var raw    = val.replace(/\s/g, '');
+                var padded = (raw + '••••••••••••••••').substring(0, 16);
+                preview.textContent = padded.replace(/(.{4})/g, '$1 ').trim();
+            }
+        }
+ 
+        /* Format expiry */
+        function formatExp(input) {
+            var val = input.value.replace(/\D/g, '').substring(0, 4);
+            if (val.length >= 3) val = val.substring(0, 2) + ' / ' + val.substring(2);
+            input.value = val;
+            var preview = document.getElementById('cardExpPreview');
+            if (preview) preview.textContent = val.length >= 7 ? val : 'MM/YY';
+        }
+    </script>
 </body>
 
 </html>
