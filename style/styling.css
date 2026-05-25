@@ -586,30 +586,34 @@ margin:0 -10px;
 .green-card img,
 .blue-card img{
 
-    width:90%;
+    width: 90%;
+    max-width: 380px;
+    max-height: 100%;
 
-    max-width:380px;
+    object-fit: contain;
 
-    max-height:none;
+    transform: scale(1.05);
 
-    transform:scale(1.15);
+    position: relative;
 
-    position:relative;
-
-    bottom:50px;
-
+    bottom: 20px;
 }
 
 /* KHUSUS CARD MERAH + ABU BESARKAN */
 /* CARD MERAH + ABU BESAR */
 
-.large-card .card-img-wrap,
-.bottom-large .card-img-wrap{
+.card-img-wrap{
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     overflow: visible;
 
-    align-items:flex-end;
-
+    margin:0 -10px;
 }
 
 /* SEPATU BESAR */
